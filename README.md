@@ -1,29 +1,72 @@
 # Organize — Claude Code Skill
 
-Clean and organize your laptop — sort Downloads, flag duplicates, organize screenshots by month, and report what was moved.
+Sort Downloads, organize screenshots by month, flag duplicates and large files. Your laptop organizer.
+
+## Prerequisites
+
+- [Claude Code](https://claude.ai/claude-code) CLI installed
+- GitHub CLI (`gh`) for one-line install
+
+## Installation
+
+**One-line install:**
+
+```bash
+gh repo clone chethanbhatbs/organize-skill ~/.claude/skills/organize
+```
+
+**Manual install:**
+
+```bash
+git clone https://github.com/chethanbhatbs/organize-skill.git
+cp -r organize-skill/ ~/.claude/skills/organize/
+```
+
+**Verify it's installed:**
+
+```bash
+ls ~/.claude/skills/organize/
+```
+
+You should see `SKILL.md` (and any other skill files).
 
 ## Usage
 
 ```
-/organize           # Quick scan: sort Downloads, flag issues
-/organize full      # Full scan: all folders, duplicates, stale files
-/organize downloads # Only sort the Downloads folder
-/organize screenshots # Only organize screenshots by month
+/organize              # Quick scan: sort Downloads, flag issues
+/organize full         # Full scan: all folders, duplicates, stale files
+/organize downloads    # Only sort the Downloads folder
+/organize screenshots  # Only organize screenshots by month
 ```
 
-## Rules
+### What it does
 
+- **Sorts Downloads** into the right folder by file type:
+  - `.pdf` (Aadhar, PAN, certificates) → `~/personal/`
+  - `.xlsx`, `.csv`, reports → `~/work/`
+  - Screenshots → `~/screenshots/YYYY-MM/`
+  - Installers (`.dmg`, `.zip`) → `~/Downloads/App Installers/`
+- **Organizes screenshots** by modification date into `~/screenshots/YYYY-MM/` folders
+- **Flags duplicates** (e.g., `file.pdf` and `file (1).pdf`)
+- **Flags large files** >100MB that may no longer be needed
+- **Flags stale files** in Downloads older than 30 days
+- **Keeps Desktop empty**
+
+### Rules
 - **Never deletes files** — only moves and organizes
-- **Shows plan before moving** — confirms bulk moves with user
-- Downloads sorted by file type into `~/personal/`, `~/work/`, `~/projects/`, `~/screenshots/`
-- Screenshots organized into `~/screenshots/YYYY-MM/` by modification date
-- Flags duplicates, large files (>100MB), and stale files (>30 days)
-- Desktop must stay empty
+- **Shows plan before moving** — asks for confirmation on bulk moves
+- If a file's destination is unclear, it asks you
 
-## Installation
+
+
+## How Claude Code Skills Work
+
+Skills are markdown files in `~/.claude/skills/` that give Claude Code specialized instructions for specific tasks. When you invoke a skill (e.g., `/Organize`), Claude reads the `SKILL.md` and follows its instructions.
+
+## Uninstall
 
 ```bash
-cp -r organize ~/.claude/skills/
+rm -rf ~/.claude/skills/organize
 ```
 
 ## License
