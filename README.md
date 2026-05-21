@@ -12,20 +12,20 @@ Sort Downloads, organize screenshots by month, flag duplicates and large files. 
 **One-line install:**
 
 ```bash
-gh repo clone chethanbhatbs/organize-skill ~/.claude/skills/organize
+gh repo clone chethanbhatbs/cleanroom-skill ~/.claude/skills/cleanroom
 ```
 
 **Manual install:**
 
 ```bash
-git clone https://github.com/chethanbhatbs/organize-skill.git
-cp -r organize-skill/ ~/.claude/skills/organize/
+git clone https://github.com/chethanbhatbs/cleanroom-skill.git
+cp -r organize-skill/ ~/.claude/skills/cleanroom/
 ```
 
 **Verify it's installed:**
 
 ```bash
-ls ~/.claude/skills/organize/
+ls ~/.claude/skills/cleanroom/
 ```
 
 You should see `SKILL.md` (and any other skill files).
@@ -66,7 +66,7 @@ Skills are markdown files in `~/.claude/skills/` that give Claude Code specializ
 ## Uninstall
 
 ```bash
-rm -rf ~/.claude/skills/organize
+rm -rf ~/.claude/skills/cleanroom
 ```
 
 ## License
