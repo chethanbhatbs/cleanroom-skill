@@ -69,6 +69,8 @@ Skills are markdown files in `~/.claude/skills/` that give Claude Code specializ
 rm -rf ~/.claude/skills/cleanroom
 ```
 
-## License
+---
 
-MIT
+<p align="center">
+  <sub>Built with <a href="https://emergent.sh">Emergent</a> + <a href="https://claude.ai/code">Claude Code</a> · refined by hand</sub>
+</p>
